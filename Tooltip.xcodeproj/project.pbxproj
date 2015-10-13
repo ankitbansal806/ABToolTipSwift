@@ -188,6 +188,8 @@
 		1AEB7C3B1B906F2400F2827E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = fullestop;
 				TargetAttributes = {

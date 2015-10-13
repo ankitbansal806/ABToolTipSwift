@@ -40,55 +40,55 @@ class ViewController: UIViewController {
         
 //        poptip.tapHandler = {
 //            self.TooltipBtn.tag = 2
-//            println("show")
+//            print("show")
 //        }
 //        poptip.dismissHandler = {
 //            self.TooltipBtn.tag = 1
-//             println("dismiss")
+//             print("dismiss")
 //        }
     }
     
     func tooltipBtnClkd(sender:UIButton!) {
-       println(TooltipBtn.tag)
+       print(TooltipBtn.tag)
         switch(true){
         case (TooltipBtn.tag == 1):
-            println("up")
+            print("up")
             TooltipBtn.tag = 2
             type(ABPopTipDirection.Up)
             break;
         case (TooltipBtn.tag == 2):
-            println("dismiss")
+            print("dismiss")
             TooltipBtn.tag = 3
             poptip.hide()
             break;
         case (TooltipBtn.tag == 3):
-            println("down")
+            print("down")
             TooltipBtn.tag = 4
             type(ABPopTipDirection.Down)
             break;
         case (TooltipBtn.tag == 4):
-            println("dismiss")
+            print("dismiss")
             TooltipBtn.tag = 5
             poptip.hide()
             break;
         case (TooltipBtn.tag == 5):
-            println("right")
+            print("right")
             TooltipBtn.tag = 6
             type(ABPopTipDirection.Right)
             break;
         case (TooltipBtn.tag == 6):
-            println("dismiss")
+            print("dismiss")
             TooltipBtn.tag = 7
             poptip.hide()
             break;
         case (TooltipBtn.tag == 7):
-            println("left")
+            print("left")
             TooltipBtn.tag = 8
             type(ABPopTipDirection.Left)
             break;
         case (TooltipBtn.tag == 8):
             
-             println("dismiss")
+             print("dismiss")
             TooltipBtn.tag = 1
             poptip.hide()
             default:
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         
 //        if TooltipBtn.tag == 1 {
 //            TooltipBtn.tag = 2
-//            println("Show!")
+//            print("Show!")
 //            self.poptip.popoverColor = UIColor.redColor()
         
             
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
 //            TooltipBtn.tag = 1
 //            poptip.hide()
 //            
-//            println("Dismiss!")
+//            print("Dismiss!")
 //        }
         
     }
