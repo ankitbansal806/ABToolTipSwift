@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     var TooltipBtn : UIButton!
     var poptip : ABPopTip!
     
-    let screenWidth = UIScreen.mainScreen().bounds.size.width
-    let screenHeight = UIScreen.mainScreen().bounds.size.height
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,14 @@ class ViewController: UIViewController {
         poptip.edgeInsets = UIEdgeInsetsMake(0, 10, 0, 10);
         
         TooltipBtn = UIButton()
-        TooltipBtn.frame = CGRectMake(screenWidth/2-15,screenHeight/2,30,30)
-        TooltipBtn.setTitle("[?]", forState: UIControlState.Normal)
-        TooltipBtn.backgroundColor = UIColor.redColor()
+        TooltipBtn.frame = CGRect(x:screenWidth/2-15,y:screenHeight/2,width:30,height:30)
+        TooltipBtn.setTitle("[?]", for: UIControlState.normal)
+        TooltipBtn.backgroundColor = UIColor.red
         TooltipBtn.showsTouchWhenHighlighted = true
-        TooltipBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        TooltipBtn.setTitleColor(UIColor.white, for: UIControlState.normal)
         TooltipBtn.titleLabel!.font = UIFont(name: "Avenir-Medium", size: 15)
         TooltipBtn.tag = 1
-        TooltipBtn.addTarget(self, action: "tooltipBtnClkd:", forControlEvents: UIControlEvents.TouchUpInside)
+        TooltipBtn.addTarget(self, action: #selector(self.tooltipBtnClkd), for: UIControlEvents.touchUpInside)
         self.view.addSubview(TooltipBtn)
         
 //        poptip.tapHandler = {
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         case (TooltipBtn.tag == 1):
             print("up")
             TooltipBtn.tag = 2
-            type(ABPopTipDirection.Up)
+            type(TYPE: ABPopTipDirection.up)
             break;
         case (TooltipBtn.tag == 2):
             print("dismiss")
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         case (TooltipBtn.tag == 3):
             print("down")
             TooltipBtn.tag = 4
-            type(ABPopTipDirection.Down)
+            type(TYPE: ABPopTipDirection.down)
             break;
         case (TooltipBtn.tag == 4):
             print("dismiss")
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         case (TooltipBtn.tag == 5):
             print("right")
             TooltipBtn.tag = 6
-            type(ABPopTipDirection.Right)
+            type(TYPE: ABPopTipDirection.right)
             break;
         case (TooltipBtn.tag == 6):
             print("dismiss")
@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         case (TooltipBtn.tag == 7):
             print("left")
             TooltipBtn.tag = 8
-            type(ABPopTipDirection.Left)
+            type(TYPE: ABPopTipDirection.left)
             break;
         case (TooltipBtn.tag == 8):
             
@@ -148,7 +148,7 @@ class ViewController: UIViewController {
     }
     func type(TYPE:ABPopTipDirection){
         
-        self.poptip.showText("Animated popover, great for subtle UI tips and onboarding.Animated popover, great for subtle UI tips and onboarding",direction:TYPE ,maxWidth: 200, inView: self.view, fromFrame:TooltipBtn.frame, duration:10)
+        self.poptip.showText("Animated popover, great for subtle UI tips and onboarding.Animated popover, great for subtle UI tips and onboarding",direction:TYPE ,maxWidth: 200, in: self.view, fromFrame:TooltipBtn.frame, duration:10)
         
     }
     override func didReceiveMemoryWarning() {
