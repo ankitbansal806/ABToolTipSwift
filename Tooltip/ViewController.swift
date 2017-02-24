@@ -60,6 +60,7 @@ class ViewController: UIViewController {
             print("dismiss")
             TooltipBtn.tag = 3
             poptip.hide()
+            
             break;
         case (TooltipBtn.tag == 3):
             print("down")
